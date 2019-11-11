@@ -22,13 +22,17 @@ export default withFormik({
     };
   },
   validationSchema: Yup.object().shape({
-    username: Yup.string().required(),
-    password: Yup.string().required()
+    // username: Yup.string().required(),
+    // password: Yup.string().required()
   }),
   handleSubmit(values, { resetForm, history }) {
-    axiosWithAuth
-      .post()
-      .then()
-      .catch();
+    axiosWithAuth()
+      .post("/auth/register", values)
+      .then(res => {
+        console.log(`register success`, res);
+      })
+      .catch(err => {
+        console.log(`register failed`, err);
+      });
   }
 })(Register);

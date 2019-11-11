@@ -26,7 +26,7 @@ export default withFormik({
     // password: Yup.string().required()
   }),
   handleSubmit(values, { resetForm, history }) {
-    axiosWithAuth
+    axiosWithAuth()
       .post("/auth/login", values)
       .then(res => history.push("/users"))
       .catch();
