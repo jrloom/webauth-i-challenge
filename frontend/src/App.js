@@ -1,10 +1,17 @@
 import React from "react";
+
+import Login from "./Forms/Login";
+import Register from "./Forms/Register";
+import Router from "./utils/Router";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <div>Div!</div>
+      <Login />
+      <Register />
+      <Router />
     </div>
   );
 }
